@@ -38,7 +38,7 @@ fastify.get('/get-link', {
     }
 }, async (req, res) => {
     // Ссылка для получения метаданных приложения
-    const appUrl = HOST_NAME;
+    const appUrl = encodeURIComponent('https://phantom.app');
 
     const keyPair = crypto.generateKeyPairSync('x25519');
 
@@ -47,7 +47,7 @@ fastify.get('/get-link', {
     const pubKey = bs58.encode(pubKeyBuf);
 
     // Куда отправит phantom после подключения
-    const redirectLink = encodeURIComponent(`${HOST_NAME}/send-transaction?userId=${req.query.user_id}`);
+    const redirectLink = encodeURIComponent(`${HOST_NAME}/send-transaction`);
 
     const generatedUrl = `https://phantom.app/ul/v1/connect?app_url=${appUrl}&dapp_encryption_public_key=${pubKey}&redirect_link=${redirectLink}`;
 
@@ -62,4 +62,4 @@ fastify.listen({ port: 8080 }, (err, address) => {
         process.exit(1)
     }
     console.log(`Server listening at ${address}`)
-})
+});
