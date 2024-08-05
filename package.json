@@ -1,0 +1,23 @@
+{
+  "name": "phantompay",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/static": "^7.0.4",
+    "@fastify/type-provider-typebox": "^4.0.0",
+    "@sinclair/typebox": "^0.32.35",
+    "@types/node": "^22.1.0",
+    "bs58": "^6.0.0",
+    "fastify": "^4.28.1",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
